@@ -53,7 +53,7 @@ key2="pG^imos"
 key3="ewUglpt"
 flag=""
 key4=[key1,key2,key3]
-for i in range(12):
+for i in range(12): 
 	flag+=chr(ord(key4[i%3][(2*int(i/3))]) -1)
 print(flag)
 ```
