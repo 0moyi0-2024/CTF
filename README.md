@@ -1,2 +1,2 @@
 # CTF
-This is a summary of the CTF question training.
+我是刚入门安全的一名小白，尝试开始记录写写题，有时间的话也争取写写题解，慢慢进步。    20240713  16：12
