@@ -6,6 +6,7 @@
 
 题解
 用ida打开看到的是
+
 ```
 __int64 __fastcall main(int a1, char **a2, char **a3)
 {
@@ -28,7 +29,9 @@ __int64 __fastcall main(int a1, char **a2, char **a3)
   }
 }
 ```
+
 然后分析这个题目是需要让我们输入特定的值使得程序可以走到 **puts("Nice!")** 这个分支里面去，这样我们就需要让(unsigned int)sub_4006FD(s)这个函数的结果不成立，继续往上追溯sub_4006FD函数
+
 ```
 __int64 __fastcall sub_4006FD(__int64 a1)
 {
@@ -47,6 +50,7 @@ __int64 __fastcall sub_4006FD(__int64 a1)
 }
 ```
 可以看到这个函数里面要让返回值为0，才能让我们最终走到我们想要的**puts("Nice!")** 分支上，那在这里的话就需要让输入的s的值能够满足for循环的条件中的*(char *)(v3[i % 3] + 2 * (i / 3)) - *(char *)(i + a1) == 1成立，所以可以编写逆向算法代码
+
 ```
 key1="Dufhbmf"
 key2="pG^imos"
@@ -57,7 +61,9 @@ for i in range(12):
 	flag+=chr(ord(key4[i%3][(2*int(i/3))]) -1)
 print(flag)
 ```
+
 最后运行得出flag为
+
 ```
 Code]Talkers
 ```
